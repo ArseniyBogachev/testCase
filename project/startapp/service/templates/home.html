@@ -1,4 +1,6 @@
 {% load static %}
+{% load menutags %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,13 +9,11 @@
     <link type="text/css" href="{% static 'css/homeStyle.css' %}" rel="stylesheet" />
 </head>
 <body>
-<div class="main">
-    {% for m in menu %}
-        <div class="button-block">
-            <span class="button-text">{{m.name}}</span>
-        </div>
-    {% endfor %}
-</div>
+
+    {% get_menu 'menu_one' btn%}
+
+    {% get_menu 'menu_two' btn%}
+
 
 </body>
 </html>

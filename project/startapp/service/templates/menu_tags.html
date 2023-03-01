@@ -1,0 +1,21 @@
+<div class="main">
+    {% for key, value in menu.items %}
+        <div class="button-block">
+            {% if selected == key.name %}
+            <a href="{{ key.get_absolute_url }}" class="block-text active-text"><span>{{key.name}}</span></a>
+            <div class="btn-menu active-btn">
+                {% for item in value %}
+                <a href="{{ key.get_absolute_url }}" class="btn-item"><span>{{item.name}}</span></a>
+                {% endfor %}
+            </div>
+            {% else %}
+            <a href="{{ key.get_absolute_url }}" class="block-text"><span>{{key.name}}</span></a>
+            <div class="btn-menu">
+                {% for item in value %}
+                <a href="{{ key.get_absolute_url }}" class="btn-item"><span>{{item.name}}</span></a>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>

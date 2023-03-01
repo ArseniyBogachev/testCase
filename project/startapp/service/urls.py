@@ -3,5 +3,7 @@ from .views import *
 
 
 urlpatterns = [
-    path(r'<int:pk>/', home),
+    # path(r'<slug:url>/', home, name='base'),
+    path(r'', home, name='base'),
+    path(r'<slug:url>/<slug:btn>/', home, name='btn')
 ]
